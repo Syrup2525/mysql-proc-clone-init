@@ -32,7 +32,7 @@ MYSQL_USER=user
 MYSQL_PASSWORD=password
 MYSQL_DATABASE=somedatabase
 
-VERSION_SUFFIX=_v0_13_0
+VERSION_SUFFIX=_v0_13_1
 ```
 
 2. Docker Container 를 build 합니다.
