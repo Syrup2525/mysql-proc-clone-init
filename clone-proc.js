@@ -40,6 +40,7 @@ let createSQL = extractCreateSQL(rawText).replace(
 
 // 🔹 최종 SQL 생성
 const finalSQL = `
+SET NAMES utf8mb4;
 DELIMITER $$
 DROP PROCEDURE IF EXISTS \`${newProcName}\`$$
 ${createSQL.trim()}$$

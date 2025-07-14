@@ -17,7 +17,10 @@ for PROC in $PROCS; do
   node clone-proc.js "$PROC" "$VERSION_SUFFIX" "$RAW_FILE" "/tmp/create_proc_${PROC}${VERSION_SUFFIX}.sql"
   
   echo "📦 실행 중: /tmp/create_proc_${PROC}${VERSION_SUFFIX}.sql"
-  mysql -h "$MYSQL_HOST" -P "$MYSQL_PORT" -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" < "/tmp/create_proc_${PROC}${VERSION_SUFFIX}.sql"
+  mysql --default-character-set=utf8mb4 \
+    -h "$MYSQL_HOST" -P "$MYSQL_PORT" \
+    -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" \
+    "$MYSQL_DATABASE" < "/tmp/create_proc_${PROC}${VERSION_SUFFIX}.sql"
 
   echo "✅ ${PROC}${VERSION_SUFFIX} 생성 완료!"
 done
