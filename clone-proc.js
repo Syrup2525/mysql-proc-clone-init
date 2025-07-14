@@ -48,5 +48,5 @@ DELIMITER ;
 `;
 
 // 🔹 파일 저장
-fs.writeFileSync(outputFilePath, finalSQL);
+fs.writeFileSync(outputFilePath, finalSQL, 'utf8');
 console.log(`📝 ${newProcName} 생성 SQL 저장 완료: ${outputFilePath}`);
